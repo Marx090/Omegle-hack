@@ -6,4 +6,7 @@ window.oRTCPeerConnection =
 window.RTCPeerConnection = function (...args) {
   const pc = new window.oRTCPeerconnection(...args);
 
-  pc.oadd
+  pc.oaddIIceCandidate = pc.addIceCandidate;
+
+pc.addIceCandidate = function (iceCandidate, ...rest) {
+   const fields = 
